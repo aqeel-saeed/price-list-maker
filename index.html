@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سوق الخضار والفواكه</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-section">
+        <input type="text" id="itemName" placeholder="اسم المنتج" required />
+        <input type="number" id="itemPrice" placeholder="السعر" required />
+        <button onclick="addItem()">أضف إلى القائمة</button>
+      </div>
+
+      <div class="export-area">
+        <div class="label-container">
+          <h1>الحسن للخضار والفواكه</h1>
+          <h3 id="todayDate"></h3>
+        </div>
+        <div class="table-container">
+          <table id="itemsTable">
+            <thead>
+              <tr>
+                <th>اسم المنتج</th>
+                <th>السعر (ل.س)</th>
+              </tr>
+            </thead>
+            <tbody id="itemsList"></tbody>
+          </table>
+        </div>
+        <div class="label-container">
+          <h4>حي الأمين - مقابل جامع الزهراء ع - خلف مسمكة الكرم</h4>
+        </div>
+      </div>
+
+      <button class="export-btn" onclick="exportAsImage()">
+        حفظ القائمة كصورة
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
