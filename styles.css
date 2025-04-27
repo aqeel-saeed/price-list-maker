@@ -184,3 +184,27 @@ tr:nth-child(even) {
 .label-container h4 {
   color: #fff;
 }
+
+/* Force desktop layout for export */
+.force-desktop .export-area,
+.export-area.force-desktop {
+  width: 800px !important;
+  max-width: 800px !important;
+}
+
+.force-desktop .export-area * {
+  font-size: 1rem !important;
+}
+
+@media (max-width: 600px) {
+  body.force-desktop .input-section,
+  .export-area.force-desktop .input-section {
+    flex-direction: row !important;
+  }
+  body.force-desktop input,
+  body.force-desktop button,
+  .export-area.force-desktop input,
+  .export-area.force-desktop button {
+    width: auto !important;
+  }
+}

@@ -24,12 +24,9 @@ function addItem() {
 
 function exportAsImage() {
   const exportArea = document.querySelector(".export-area");
-  const originalWidth = exportArea.style.width;
-  const originalMaxWidth = exportArea.style.maxWidth;
-
-  // Set to desktop width for export
-  exportArea.style.width = "800px";
-  exportArea.style.maxWidth = "800px";
+  // Add force-desktop class to body and export-area
+  document.body.classList.add("force-desktop");
+  exportArea.classList.add("force-desktop");
 
   html2canvas(exportArea, {
     backgroundColor: null,
@@ -37,9 +34,9 @@ function exportAsImage() {
     logging: false,
     useCORS: true,
   }).then((canvas) => {
-    // Restore original width
-    exportArea.style.width = originalWidth;
-    exportArea.style.maxWidth = originalMaxWidth;
+    // Remove force-desktop class
+    document.body.classList.remove("force-desktop");
+    exportArea.classList.remove("force-desktop");
 
     const link = document.createElement("a");
     link.download = "قائمة-الأسعار.png";
