@@ -79,7 +79,7 @@ td {
 
 th:last-child,
 td:last-child {
-  border-right: none;
+  border-left: none;
 }
 
 th {
